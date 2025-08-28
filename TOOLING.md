@@ -1,0 +1,14 @@
+- **Runtime:** Python 3.13. Period. It's current stable.
+- **Project & envs:** `uv` for everything (init, deps, locking, tools). It's fast, creates `uv.lock`, and `uvx` runs tools without polluting your env.
+- **Packaging metadata:** Put it in `pyproject.toml`
+- **Formatting & linting:** Just Ruff (formatter + linter). No Black, no isort. One CLI.
+- **Types:** Pyright (strict). Use `pyproject.toml`
+- **Tests:** pytest + Hypothesis for property-based fuzzing.
+- **Web API:** FastAPI (+ Pydantic v2). Mature, type-driven.
+- **DB layer:** SQLAlchemy 2.0 (+ Alembic for migrations). Use the modern 2.x style.
+- **Config/secrets:** pydantic-settings (env-first).
+- **Logging:** structlog with JSON in prod.
+- **Retries:** tenacity for explicit, testable retry policies.
+- **Data work:** Polars for DataFrame speed and sane APIs.
+- **CLI:** Typer (click, but typed).
+- **Container:** `python:3.13-slim-bookworm` base, gunicorn + uvicorn-worker for ASGI.
